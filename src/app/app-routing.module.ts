@@ -1,17 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {AppComponent} from './app.component';
 import {UsersComponent} from './users/users.component';
-import {RacesComponent} from './races/races.component';
-import {StagesComponent} from './stages/stages.component';
-import {LeaguesComponent} from './leagues/leagues.component';
-import {StartComponent} from './start/start.component';
+import {UserDetailsComponent} from './users/user-details/user-details.component';
+// import {RacesComponent} from './races/races.component';
+// import {StagesComponent} from './stages/stages.component';
+// import {LeaguesComponent} from './leagues/leagues.component';
 
 const routes: Routes = [
-  {path: '', component: StartComponent},
+  {path: '', redirectTo: '/users', pathMatch: 'full' },
   {path: 'users', component: UsersComponent},
-  {path: 'races', component: RacesComponent},
-  {path: 'stages', component: StagesComponent},
-  {path: 'leagues', component: LeaguesComponent},
+  {path: 'users/:id', component: UserDetailsComponent},
 ];
 
 @NgModule({
