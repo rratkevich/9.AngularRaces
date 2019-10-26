@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 import {AppComponent} from './app.component';
 import {UsersComponent} from './users/users.component';
 import {UserDetailsComponent} from './users/user-details/user-details.component';
-// import {RacesComponent} from './races/races.component';
-// import {StagesComponent} from './stages/stages.component';
-// import {LeaguesComponent} from './leagues/leagues.component';
+import {UserAddComponent} from './users/user-add/user-add.component';
+
 
 const routes: Routes = [
-  {path: '', redirectTo: '/users', pathMatch: 'full' },
-  {path: 'users', component: UsersComponent},
+  {path: 'users/add',  component: UserAddComponent, pathMatch: 'full' },
   {path: 'users/:id', component: UserDetailsComponent},
-];
+  {path: 'users', component: UsersComponent},
+
+  ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
