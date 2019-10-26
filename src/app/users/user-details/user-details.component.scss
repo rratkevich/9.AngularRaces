@@ -1,0 +1,27 @@
+/* HeroDetailComponent's private CSS styles */
+.example-card {
+  max-width: 250px;
+}
+
+.example-header-image {
+  background-image: url('https://i.pinimg.com/originals/6d/84/a3/6d84a35f09283a253aac47b0e17595a9.jpg');
+  background-size: cover;
+}
+
+button {
+  margin-top: 50px;
+  font-family: Arial, sans-serif;
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #cfd8dc;
+}
+button:disabled {
+  background-color: #eee;
+  color: #ccc;
+  cursor: auto;
+}

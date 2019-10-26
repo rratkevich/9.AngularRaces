@@ -1,0 +1,19 @@
+<h2 class="nav-panel">Riders</h2>
+
+<ul class="users">
+  <li *ngFor="let user of users">
+      <a routerLink="/users/{{user.id}}">
+        <span class="id">{{user.id}}</span> {{user.username}}
+      </a>
+  </li>
+</ul>
+<nav>
+  <a routerLink="/users/add">Add new rider</a>
+</nav>
+
+
+
+
+
+
+

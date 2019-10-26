@@ -11,12 +11,19 @@ import { UsersComponent } from './users/users.component';
 import { UserDetailsComponent } from './users/user-details/user-details.component';
 import { UserAddComponent } from './users/user-add/user-add.component';
 
+import { LeaguesComponent} from './leagues/leagues.component';
+import { StagesComponent } from './stages/stages.component';
+import { RacesComponent } from './races/races.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
     UserDetailsComponent,
     UserAddComponent,
+    LeaguesComponent,
+    StagesComponent,
+    RacesComponent,
   ],
   imports: [
     BrowserModule,
