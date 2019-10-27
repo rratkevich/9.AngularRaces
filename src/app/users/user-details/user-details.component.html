@@ -5,14 +5,14 @@
       <mat-card-title>{{user.username}}</mat-card-title>
       <mat-card-subtitle>{{user.name}} {{user.surname}}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/8/80/Ghost_Rider_RR.jpg/revision/latest?cb=20160912161339&path-prefix=ru" alt="Ghost Racer">
+    <img mat-card-image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgoJlwtSlx4RGwFanhRrwFPg-a-7wfTIOdp5j_55tlzDDQUGHvng&s" alt="Racer">
     <mat-card-content>
       <p>
         The {{user.username}} is one of the famous riders, who ready to sell your soul for win!
       </p>
     </mat-card-content>
     <mat-card-actions>
-      <button (click)="goBack()">Go back to Users</button>
+      <button mat-raised-button color="primary" (click)="goBack()">Go back to Users</button>
      </mat-card-actions>
   </mat-card>
 </div>

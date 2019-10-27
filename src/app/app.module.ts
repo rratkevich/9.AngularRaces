@@ -4,7 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatCardModule, MatInputModule, MatButtonModule, MatTableModule } from '@angular/material';
+import { MatCardModule, MatInputModule, MatButtonModule, MatTableModule,
+  MatGridListModule, MatListModule, MatIconModule, MatTabsModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
@@ -14,7 +15,6 @@ import { UserAddComponent } from './users/user-add/user-add.component';
 import { LeaguesComponent} from './leagues/leagues.component';
 import { StagesComponent } from './stages/stages.component';
 import { RacesComponent } from './races/races.component';
-import {MatGridListModule} from '@angular/material/grid-list';
 
 
 @NgModule({
@@ -38,6 +38,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatTableModule,
     MatGridListModule,
     ReactiveFormsModule,
+    MatListModule,
+    MatIconModule,
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

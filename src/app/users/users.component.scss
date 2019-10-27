@@ -1,63 +1,11 @@
-/* HeroesComponent's private CSS styles */
-
-.nav-panel {
-  color: white;
-  padding: 10px 0 0 25px;
-  margin: 10px 10px 0 65px;
-  background-color: #000000;
-  width: 8em;
-  height: 1.5em;
-  border-radius: 8px;
+.nav-panel{
+  margin: auto;
+  width: 15%;
 }
-.users {
-  margin: 0 0 5em 0;
-  list-style-type: none;
-  padding: 0 0 0 50px;
-  width: 20em;
+mat-nav-list {
+  width: 30%;
+  margin: auto;
 }
-.users li {
-  cursor: pointer;
-  position: relative;
-  left: 0;
-  background-color: #EEE;
-  margin: 1em;
-  padding: .3em 0 .8em 0;
-  height: 1.6em;
-  width: 15em;
-  border-radius: 4px;
-}
-.users li a:hover {
-  color: #607D8B;
-  background-color: #DDD;
-}
-.users li a:hover {
-
-}
-.users li a.selected {
-  background-color: #dca5a2;
-  color: white;
-}
-.users li a.selected:hover {
-  background-color: #BBD8DC;
-  color: white;
-}
-.users .id {
-  display: inline-block;
-  font-size: small;
-  color: white;
-  padding: 0.8em 0.7em 0.8em 0.5em;
-  background-color: #161b21;
-  line-height: 1em;
-  position: relative;
-  left: -1px;
-  top: -4px;
-  height: 1.8em;
-  margin-right: .8em;
-  border-radius: 4px 0 0 4px;
-}
-.users li a {
-  background-color: black;
-  color: white;
-  position: absolute;
-  left: 120px;
+mat-list-item {
+  background-color: #ededed;
 }

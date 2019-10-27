@@ -1,8 +1,27 @@
 <h1 class="header">{{title}}</h1>
-<nav>
-  <a mat-raised-button color="primary" routerLink="/users">Users</a>
-</nav>
 
+<mat-tab-group>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <a mat-raised-button color="primary" routerLink="/users">Users</a>
+    </ng-template>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <a mat-raised-button color="primary" routerLink="/users">Races</a>
+    </ng-template>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <a mat-raised-button color="primary" routerLink="/users">Stages</a>
+    </ng-template>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <a mat-raised-button color="primary" routerLink="/users">Leagues</a>
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>
 <router-outlet></router-outlet>
 
 
