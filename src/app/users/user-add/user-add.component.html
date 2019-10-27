@@ -1,15 +1,44 @@
-<h1>{{title}}</h1>
+<h2> Create new user</h2>
 
-<!--  <h2> Create new rider</h2>-->
-<!--<div><span>id: </span> {{user.id}}</div>-->
-<!--<div>-->
-<!--  <label>name:-->
-<!--    <input [(ngModel)]="user.name" placeholder="name"/>-->
-<!--  </label>-->
-<!--  <label>surname:-->
-<!--    <input [(ngModel)]="user.surname" placeholder="surname"/>-->
-<!--  </label>-->
-<!--  <label>username:-->
-<!--    <input [(ngModel)]="user.username" placeholder="username"/>-->
-<!--  </label>-->
-<!--</div>-->
+<mat-card>
+  <mat-form-field>
+    <label>name:
+      <textarea matInput rows="1" [(ngModel)]="user.name"></textarea>
+    </label>
+  </mat-form-field>
+  <mat-form-field>
+    <label>surname:
+      <textarea matInput rows="1" [(ngModel)]="user.surname"></textarea>
+    </label>
+  </mat-form-field>
+  <mat-form-field>
+    <label>username:
+      <textarea matInput rows="1" [(ngModel)]="user.username"></textarea>
+    </label>
+  </mat-form-field>
+  <button mat-raised-button color="primary"
+          (click)="addUser()">Add new user</button>
+</mat-card>
+
+
+<!--<ng-form [formGroup]="profileForm" (ngSubmit)="onSubmit()">-->
+<!--  <mat-label>-->
+<!--    name:-->
+<!--    <label>-->
+<!--      <input type="'text" formControlName="name">-->
+<!--    </label>-->
+<!--  </mat-label>-->
+<!--  <mat-label>-->
+<!--    surname:-->
+<!--    <label>-->
+<!--      <input type="'text" formControlName="surname">-->
+<!--    </label>-->
+<!--  </mat-label>-->
+<!--  <mat-label>-->
+<!--    username:-->
+<!--    <label>-->
+<!--      <input type="'text" formControlName="username">-->
+<!--    </label>-->
+<!--  </mat-label>-->
+<!--  <button type="submit" [disabled]="!profileForm.valid">Submit</button>-->
+<!--</ng-form>-->

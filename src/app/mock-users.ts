@@ -1,6 +1,6 @@
 import {User} from './User';
 
-export const USERS: User[] = [
+export const USERS: Array<User> = [
   {id: 1, name: 'Pol', surname: 'Scaffold', username: 'PolSc'},
   {id: 2, name: 'Katy', surname: 'Wigwams', username: 'KaW'},
   {id: 3, name: 'Aaron', surname: 'Ramsey', username: 'ARam'},
