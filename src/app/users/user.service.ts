@@ -18,12 +18,15 @@ export class UserService {
   getUser(id: number): Observable<User> {
     return of(USERS.find(user => user.id === id));
   }
-  addUser(user: User): void {
-    user.id = this.generateId();
-    const lengthArray = USERS.push(user);
-  }
-  generateId(): number {
-    return  ++USERS.length;
-  }
+
+  // addUser(): void {
+  //   console.log(USERS);
+  //   user.id = this.generateId();
+  //   const lengthArray = USERS.push(user);
+  //   console.log(user);
+  //   console.log(USERS);
+  // generateId(): number {
+  //   return  ++USERS.length;
+  // }
   // updateUser()
 }
