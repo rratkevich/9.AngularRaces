@@ -4,7 +4,7 @@ import {UserService} from '../user.service';
 import {Observable, of} from 'rxjs';
 import {USERS} from '../../mock-users';
 import {FormControl, FormGroup, FormBuilder} from '@angular/forms';
-import {Location} from '@angular/common';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-user-form',
@@ -13,6 +13,13 @@ import {Location} from '@angular/common';
 })
 export class UserFormComponent implements OnInit {
   user: User;
+  constructor(
+    private userService: UserService,
+    private formBuilder: FormBuilder,
+    private location: Location,
+  ) {}
+
+
   userForm = this.formBuilder.group({
     id: [this.user ? this.user.id : null],
     name: [''],
@@ -21,25 +28,10 @@ export class UserFormComponent implements OnInit {
   });
 
   onSubmit() {
-    const user: User = this.userForm.value;
-    if (!user.id) {
-      user.id = this.generateId();
-    }
-    USERS.push(user);
-    this.location.back();
-  }
-
-  generateId(): number {
-    return USERS.length + 1;
-  }
-
-  constructor(
-    private userService: UserService,
-    private formBuilder: FormBuilder,
-    private location: Location,
-  ) {
+    this.userService.onSubmit(this.userForm);
   }
 
   ngOnInit() {
   }
+
 }

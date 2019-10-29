@@ -8,10 +8,11 @@ import {UserFormComponent} from './users/user-form/user-form.component';
 
 
 const routes: Routes = [
+  {path: 'users/update/:', component: UserFormComponent},
+  {path: 'users/update', component: UserFormComponent},
   {path: 'users/add',  component: UserFormComponent },
   {path: 'users/:id', component: UserDetailsComponent},
   {path: 'users', component: UsersComponent},
-
   ];
 
 @NgModule({

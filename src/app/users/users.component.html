@@ -5,6 +5,8 @@
   <mat-list-item *ngFor="let user of users">
     <mat-list-item> {{user.id}}. {{user.name}} {{user.surname}} </mat-list-item>
     <a mat-raised-button color="primary" routerLink="/users/{{user.id}}"><mat-icon>info</mat-icon></a>
+    <a mat-raised-button color="primary" routerLink="/users/update"><mat-icon>edit</mat-icon></a>
+    <a mat-raised-button color="primary" routerLink="/users/update"><mat-icon>delete</mat-icon></a>
   </mat-list-item>
   <a mat-raised-button color="primary" routerLink="/users/add">Add new user</a>
 </mat-nav-list>

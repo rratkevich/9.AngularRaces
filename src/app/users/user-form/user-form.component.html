@@ -1,11 +1,11 @@
-<h2> Create new user</h2>
+<h2 > Create new user</h2>
 
 <mat-card>
   <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
     <mat-form-field>
       <label>
         name:
-        <label >
+        <label>
           <input matInput type="'text" formControlName="name">
         </label>
       </label>
@@ -28,28 +28,7 @@
     </mat-form-field>
 
     <button mat-raised-button color="primary" type="submit" [disabled]="!userForm.valid">Submit</button>
-  </form>
+      </form>
 </mat-card>
 
 
-<!--<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">-->
-<!--  <mat-label>-->
-<!--    name:-->
-<!--    <label>-->
-<!--      <input type="'text" formControlName="name">-->
-<!--    </label>-->
-<!--  </mat-label>-->
-<!--  <mat-label>-->
-<!--    surname:-->
-<!--    <label>-->
-<!--      <input type="'text" formControlName="surname">-->
-<!--    </label>-->
-<!--  </mat-label>-->
-<!--  <mat-label>-->
-<!--    username:-->
-<!--    <label>-->
-<!--      <input type="'text" formControlName="username">-->
-<!--    </label>-->
-<!--  </mat-label>-->
-<!--  <button type="submit" [disabled]="!profileForm.valid">Submit</button>-->
-<!--</form>-->

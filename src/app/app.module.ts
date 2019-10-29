@@ -15,6 +15,8 @@ import { UserFormComponent } from './users/user-form/user-form.component';
 import { LeaguesComponent} from './leagues/leagues.component';
 import { StagesComponent } from './stages/stages.component';
 import { RacesComponent } from './races/races.component';
+import { UserAddComponent } from './user-add/user-add.component';
+import { UserDeleteComponent } from './user-delete/user-delete.component';
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import { RacesComponent } from './races/races.component';
     LeaguesComponent,
     StagesComponent,
     RacesComponent,
+    UserAddComponent,
+    UserDeleteComponent,
   ],
   imports: [
     BrowserModule,
