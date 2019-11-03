@@ -1,4 +1,4 @@
-<h2 > Create new user</h2>
+<h2 >{{title}}</h2>
 
 <mat-card>
   <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
@@ -27,7 +27,8 @@
       </label>
     </mat-form-field>
 
-    <button mat-raised-button color="primary" type="submit" [disabled]="!userForm.valid">Submit</button>
+    <button *ngIf="title == 'Update user'" mat-raised-button color="primary" type="submit" [disabled]="!userForm.valid">Update</button>
+    <button *ngIf="title == 'Create new user'" mat-raised-button color="primary" type="submit" [disabled]="!userForm.valid">Submit</button>
       </form>
 </mat-card>
 

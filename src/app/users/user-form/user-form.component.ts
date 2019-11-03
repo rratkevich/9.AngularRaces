@@ -1,10 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {User} from '../../User';
 import {UserService} from '../user.service';
 import {Observable, of} from 'rxjs';
 import {USERS} from '../../mock-users';
 import {FormControl, FormGroup, FormBuilder} from '@angular/forms';
 import { Location } from '@angular/common';
+import { UserUpdateComponent} from '../user-update/user-update.component';
 
 @Component({
   selector: 'app-user-form',
@@ -12,6 +13,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./user-form.component.scss']
 })
 export class UserFormComponent implements OnInit {
+  @Input() title: string;
   user: User;
   constructor(
     private userService: UserService,
@@ -32,6 +34,9 @@ export class UserFormComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (this.title === 'update user') {
+      this.userService.getUser(this.user.id);
+    }
   }
 
 }

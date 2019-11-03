@@ -19,4 +19,7 @@ export class UsersComponent implements OnInit {
   getUsers(): void {
     this.users = this.userService.getUsers();
   }
+  deleteUser(user: User) {
+    this.users = this.users.filter( u => u.id !== user.id);
+  }
 }

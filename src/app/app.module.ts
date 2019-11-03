@@ -15,8 +15,9 @@ import { UserFormComponent } from './users/user-form/user-form.component';
 import { LeaguesComponent} from './leagues/leagues.component';
 import { StagesComponent } from './stages/stages.component';
 import { RacesComponent } from './races/races.component';
-import { UserAddComponent } from './user-add/user-add.component';
-import { UserDeleteComponent } from './user-delete/user-delete.component';
+import { UserAddComponent } from './users/user-add/user-add.component';
+import { UserDeleteComponent } from './users/user-delete/user-delete.component';
+import { UserUpdateComponent } from './users/user-update/user-update.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { UserDeleteComponent } from './user-delete/user-delete.component';
     RacesComponent,
     UserAddComponent,
     UserDeleteComponent,
+    UserUpdateComponent,
   ],
   imports: [
     BrowserModule,
