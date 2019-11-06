@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { User} from '../User';
 import {UserService} from './user.service';
+import { StoreModule } from '@ngrx/store';
+
 
 @Component({
   selector: 'app-users',

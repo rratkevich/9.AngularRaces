@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
 import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -37,6 +38,7 @@ import { UserUpdateComponent } from './users/user-update/user-update.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    StoreModule.forRoot({}),
     BrowserAnimationsModule,
     MatCardModule,
     MatInputModule,
