@@ -2,6 +2,8 @@ import {Component, Input, OnInit} from '@angular/core';
 import {User} from '../../User';
 import {FormControl, FormGroup, FormBuilder} from '@angular/forms';
 import { Location } from '@angular/common';
+import { UserService} from '../../user.service';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-user-form',
@@ -12,21 +14,31 @@ export class UserFormComponent implements OnInit {
   @Input() title: string;
   user: User;
   constructor(
+    private userService: UserService,
     private formBuilder: FormBuilder,
-    private location: Location,
+    private http: HttpClient,
   ) {}
 
-
   userForm = this.formBuilder.group({
-    id: [this.user ? this.user.id : null],
     firstName: [''],
     lastName: [''],
     password: [''],
     email: ['']
   });
 
-  onSubmit() {
-    // this.userService.onSubmit(this.userForm);
+ onSubmit(userForm: any) {
+    const user: User =  userForm.value;
+    console.log(user);
+    this.http.post('http://localhost:3000/registration', {
+      firstName: user.firstName,
+      lastName: user.lastName,
+      password: user.password,
+      email: user.email
+    }).subscribe(
+      (err) => {
+        if (err) {console.log(err); }
+        console.log('Success');
+      });
   }
 
   ngOnInit() {

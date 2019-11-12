@@ -1,7 +1,7 @@
 <h2>{{title}}</h2>
 
 <mat-card>
-  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit(userForm)">
     <mat-form-field>
       <label>
         First name:
