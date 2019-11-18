@@ -13,10 +13,7 @@ export class RegistrationComponent implements OnInit {
   constructor( private userService: UserService) { }
 
   ngOnInit() {
-    this.userService.getUsers().subscribe((data) => {
-      this.users = data;
-      console.log(this.users);
-      });
+
   }
   onSubmit(userForm: any) {
     // const user: User = userForm.value;

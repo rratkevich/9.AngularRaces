@@ -14,13 +14,9 @@ import { UserFormComponent } from './registration/user-form/user-form.component'
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { UserPageComponent } from './user-page/user-page.component';
-import { FilmListComponent } from './example/components/film-list/film-list.component';
-import { FilmItemComponent } from './example/components/film-item/film-item.component';
-import { FilmSelectedComponent } from './example/components/film-selected/film-selected.component';
-import { ExampleComponent } from './example/example.component';
 
-import { reducers, metaReducers } from './example/store/reducers';
 import { UserListComponent } from './user-list/user-list.component';
+import {metaReducers, reducers} from './store/reducers/user.selectors';
 
 
 @NgModule({
@@ -30,10 +26,6 @@ import { UserListComponent } from './user-list/user-list.component';
     RegistrationComponent,
     LoginComponent,
     UserPageComponent,
-    FilmListComponent,
-    FilmItemComponent,
-    FilmSelectedComponent,
-    ExampleComponent,
     UserListComponent
   ],
   imports: [
