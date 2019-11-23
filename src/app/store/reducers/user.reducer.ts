@@ -1,43 +1,40 @@
-import * as userAction from '../../store/actions/user.action';
 import { User } from '../../models';
+import { State } from '../../models';
+import { Actions as actions, ActionTypes as actionTypes } from '../actions/user.action';
 
-export interface State {
-  users: User[];
-}
+// import {GET_USER} from '../../store/actions/user.action';
+// const initialUsersPage: User = {
+//   id: '',
+//   firstName: '',
+//   lastName: '',
+//   password: '',
+//   email: '',
+// };
 
 export const initialState: State = {
   users: [],
-  };
+  // user: { } as User,
+};
 
-
-export function reducer(state = initialState, action: userAction.Action) {
+export function reducer(state = initialState, action: actions): State {
   switch (action.type) {
-
-    case userAction.GET_ALL_USERS: {
+    case actionTypes.GET_ALL_USERS:
       return {
         ...state,
-        users: [...state.users, action.payload]
+        users: []
       };
-    }
+    case actionTypes.GET_ALL_USERS_SUCCESS:
+      return {
+        ...state,
+        users: action.payload
+      };
+    case actionTypes.GET_ALL_USERS_FAILURE:
+      return {
+        ...state,
+        users: []
+      };
     default:
-      return state;
+       return state;
   }
 }
 
-export const getUsers = (state: State) => state.users;
-
-// export function userReducer(state, action) {
-//   // return _counterReducer(state, action);
-//   switch (action.type) {
-//     case 'ADD_USER': {
-//       return {
-//         ...state,
-//         users: [...state.users, action.payload.user]
-//       };
-//       // const user = action.payload;
-//       // const users = [...state.users, user];
-//       // return { users };
-//     }
-//   }
-//   return state;
-// }

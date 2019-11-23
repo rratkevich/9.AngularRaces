@@ -10,30 +10,32 @@ import { MatCardModule, MatInputModule, MatButtonModule, MatTableModule,
   MatGridListModule, MatListModule, MatIconModule, MatTabsModule, MatToolbarModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { UserFormComponent } from './registration/user-form/user-form.component';
-import { RegistrationComponent } from './registration/registration.component';
-import { LoginComponent } from './login/login.component';
-import { UserPageComponent } from './user-page/user-page.component';
-
 import { UserListComponent } from './user-list/user-list.component';
-import {metaReducers, reducers} from './store/reducers/user.selectors';
+import { reducer } from './store/reducers/user.reducer';
+import {EffectsModule} from '@ngrx/effects';
+import {UserEffects} from './store/effects/user.effects';
+import {UserService} from './user.service';
+import { LoginComponent } from './login/login.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { UserFormComponent } from './user-form/user-form.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserFormComponent,
-    RegistrationComponent,
+    UserListComponent,
     LoginComponent,
-    UserPageComponent,
-    UserListComponent
+    RegistrationComponent,
+    UserFormComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    StoreModule.forRoot(reducers, { metaReducers }),
+    StoreModule.forRoot(reducer),
+    AppRoutingModule,
+    EffectsModule.forRoot([UserEffects]),
+    EffectsModule.forFeature([UserEffects]),
     BrowserAnimationsModule,
     MatCardModule,
     MatInputModule,
@@ -46,7 +48,7 @@ import {metaReducers, reducers} from './store/reducers/user.selectors';
     MatTabsModule,
     MatToolbarModule,
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

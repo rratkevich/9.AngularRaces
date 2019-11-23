@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from '../models';
 import { Store } from '@ngrx/store';
-import * as fromRoot from '../store/reducers/user.reducer';
-import * as userAction from '../store/actions/user.action';
-import { UserService } from '../user.service';
+import {selectAllUsers} from '../store/selectors/user.selectors';
+import { GetAllUsersAction } from '../store/actions/user.action';
+import { State } from '../models';
+import {select} from '@ngrx/core';
+
 
 @Component({
   selector: 'app-user-list',
@@ -14,17 +16,15 @@ import { UserService } from '../user.service';
 export class UserListComponent implements OnInit {
   users$: Observable<User[]>;
   users;
-  constructor(private store: Store<fromRoot.State>, private userService: UserService) {
-    this.users$ = store.select(fromRoot.getUsers);
+  constructor(private store: Store<State>) {
   }
 
   ngOnInit(): void {
-    this.userService.getUsers().subscribe((data) => {
+      this.users$ = this.store.select(selectAllUsers);
+      this.users$.subscribe((data) => {
       this.users = data;
+      this.store.dispatch(new GetAllUsersAction());
       console.log(this.users);
-      this.store.dispatch(new userAction.GetAllUsers(this.users));
     });
-
-  }
-
+    }
 }
